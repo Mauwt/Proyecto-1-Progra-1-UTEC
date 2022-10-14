@@ -71,6 +71,3 @@ def venta():
 
     print(autos)
     print(str(auto_seleccionado))
-    
-
-venta()

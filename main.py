@@ -12,4 +12,5 @@ while True:
         opciones.disponibles()
         break
     if opcion == 3:
+        opciones.venta()
         break
