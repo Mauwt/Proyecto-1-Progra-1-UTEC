@@ -11,20 +11,27 @@ def registro():
 
     # Añadir el auto como lista al archivo autos_db.txt
     datos = [marca, fabricacion, color, precio,estado]
-    texto = []
-    with open("autos_db.txt","r",encoding="UTF-8") as F:
-        texto = F.readlines()
-        for i in range(len(texto)):
-            texto[i]=texto[i].replace("\n", "")
-        F.close()
-    
-    if str(datos) in texto:
-        print("Este auto ya se encuentra registrado \n")
-    else:
-        with open("autos_db.txt", "a", encoding="UTF-8") as F:
+
+    with open("autos_db.txt", "a", encoding="UTF-8") as F:
+        
+        texto = []
+        
+        with open("autos_db.txt", "r", encoding="UTF-8") as G:
+            
+            texto = G.readlines()
+            for i in range(len(texto)):
+                texto[i]=texto[i].replace("\n", "")
+            G.close()
+        
+        if str(datos) in texto:
+            print("Este auto ya se encuentra registrado \n")
+        
+        else:
             F.write(str(datos) + "\n")
             F.close
-        print("AUTO RERGISTRADO")
+            print("AUTO RERGISTRADO")   
+
+    # with open("autos_db.txt","r",encoding="UTF-8") as F:
 
 def disponibles():
     autos = []
