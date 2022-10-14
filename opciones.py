@@ -62,9 +62,11 @@ def venta():
         if autos[i].replace("\n","") == str(auto_seleccionado):
             autos[i] = autos[i].replace("disponible", "vendido")
     
-    with open("autos_db.txt", "a", enconding="UTF-8") as F:
+    with open("autos_db.txt", "w", encoding="UTF-8") as F:
         for i in range(len(autos)):
-            pass
+            line = str(autos[i])
+            F.write(line)
+        F.close()
             
 
     print(autos)
