@@ -41,9 +41,11 @@ def disponibles():
         F.close()
 
     for i in range(len(autos)):
-        auto_ = autos[i].replace("\n","").replace("[","").replace("]","").replace(" ","").replace("'","").split(",")
+        auto_ = autos[i].replace("\n","").replace("[","").replace("]","").replace("'","").split(",")
+        if i == 0:
+            continue
 
-        if auto_[4] == "disponible":
+        if auto_[4] == " disponible":
             tabla.append(auto_)
         else:
             continue
