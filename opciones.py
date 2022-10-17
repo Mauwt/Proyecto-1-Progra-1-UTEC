@@ -3,10 +3,10 @@ from tabulate import tabulate
 def registro():
 
     # Petición y validación de datos 
-    marca = input("Marca: ").capitalize()
-    fabricacion = int(input("Año de fabricación: "))
-    color = input("Color: ").lower()
-    precio = int(input("Precio (S/):"))
+    marca = input("Marca: ").capitalize().strip()
+    fabricacion = int(input("Año de fabricación: ").strip())
+    color = input("Color: ").lower().strip()
+    precio = int(input("Precio (S/):").strip())
     estado = "disponible"
 
     # Añadir el auto como lista al archivo autos_db.txt
@@ -31,8 +31,6 @@ def registro():
             F.close
             print("AUTO RERGISTRADO")   
 
-    # with open("autos_db.txt","r",encoding="UTF-8") as F:
-
 def disponibles():
     autos = []
     tabla=[]
@@ -53,10 +51,15 @@ def disponibles():
 
 def venta():
     # Petición y validación de datos 
-    marca = input("Marca: ").capitalize()
-    fabricacion = int(input("Año de fabricación: "))
-    color = input("Color: ").lower()
-    precio = int(input("Precio (S/):"))
+    marca = input("Marca: ").capitalize().strip()
+    fabricacion = int(input("Año de fabricación: ").strip())
+    color = input("Color: ").lower().strip()
+    precio = int(input("Precio (S/):").strip())
+
+    if fabricacion > 2022 or fabricacion < 1700:
+        print("\nIngrese una año de fabricación valido")
+    if color.isnumeric() == True:
+        print("\nIngrese un color valido")
 
     auto_seleccionado = [marca, fabricacion, color, precio, "disponible"]
     autos=[]
@@ -65,16 +68,19 @@ def venta():
         autos = F.readlines()
         F.close()
     
+    no_found= True
+
     for i in range(len(autos)):
         if autos[i].replace("\n","") == str(auto_seleccionado):
             autos[i] = autos[i].replace("disponible", "vendido")
-    
-    with open("autos_db.txt", "w", encoding="UTF-8") as F:
-        for i in range(len(autos)):
-            line = str(autos[i])
-            F.write(line)
-        F.close()
-            
-
-    print(autos)
-    print(str(auto_seleccionado))
+            no_found = False
+        
+    if no_found == True:
+        print("No se encontro este auto en la base de datos")
+    else:
+        with open("autos_db.txt", "w", encoding="UTF-8") as F:
+            for i in range(len(autos)):
+                line = str(autos[i])
+                F.write(line)
+            print(str(auto_seleccionado[0]) + " "  + str(auto_seleccionado[1]) + ' VENDIDO')
+            F.close()

@@ -1,1 +1,7 @@
-['Bmw', 2009, 'rojo', 32000, 'disponible']
+['Bmw', 2009, 'rojo', 32000, 'vendido']
+['Nisaan', 2009, 'rojo', 32000, 'vendido']
+['Toyota', 2019, 'rojo', 42000, 'vendido']
+['Bmw', 2020, 'verde', 32400, 'disponible']
+['Mitsubishi', 2010, 'marron', 45000, 'disponible']
+['Bmw', 2009, 'lila', 312450, 'vendido']
+['Bmw', 45600, 'rojo', 210000, 'disponible']
