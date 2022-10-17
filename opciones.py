@@ -27,7 +27,8 @@ def registro():
             print("Este auto ya se encuentra registrado \n")
         
         else:
-            F.write(str(datos) + "\n")
+            F.write("\n")
+            F.write(str(datos) )
             F.close
             print("AUTO RERGISTRADO")   
 

@@ -5,3 +5,5 @@
 ['Mitsubishi', 2010, 'marron', 45000, 'disponible']
 ['Bmw', 2009, 'lila', 312450, 'vendido']
 ['Bmw', 45600, 'rojo', 210000, 'disponible']
+['Citroen', 2020, 'rojo', 32000, 'disponible']
+['Citroen', 2020, 'azul', 213450, 'disponible']
