@@ -38,7 +38,7 @@ def anterior():
 def menu():
 
   while True:
-    print("⣿⣿⣿⣿⣿⣿⣿⣿⡇VENTA DE AUTOS⣿⣿⣿⣿⣿⣿⣿⣿⡇")
+    print("\n\n⣿⣿⣿⣿⣿⣿⣿⣿⡇VENTA DE AUTOS⣿⣿⣿⣿⣿⣿⣿⣿⡇")
     print()
     
     print("1   Registrar Autos \n2   Autos disponibles\n3   Comprar Auto \n4   salir")
